@@ -1,0 +1,21 @@
+<%- include("header.ejs") %>
+<link rel="stylesheet" href="/css/style.css">
+<div class="container mt-5">
+<div class="row">
+    <div class="col-3">
+    <form action="/submit" method="post">
+        <label for="title"> Enter Title </label>
+        <input class="form-control mt-2" type="text" name="title" id="" placeholder="Post title" required>
+    <button type="submit" class="btn mt-2 btn-primary">Create</button> 
+    </form>
+</div>    
+</div>
+</div>
+
+<script>
+	window.onpageshow = function(event) {
+		if (event.persisted) {
+			window.location.reload();
+		}
+	};
+</script>

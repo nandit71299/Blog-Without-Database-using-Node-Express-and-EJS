@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="css/style.css">
+
+<div class="container  bg-light rounded-3" style="height: 80vh; overflow-x: hidden;">
+    <div class="px-3 py-2 mt-3">
+    <h5>All Posts</h5>
+</div>
+<%if(post.length === 0){ %>
+  <!-- <div class="container justify-content-center" style="height: 80vh;"> -->
+    <div class="row justify-content-center d-flex mt-5 align-items-center" style="height: 50vh;">
+    <h7 class="text-center text-secondary">No Posts Created.</h7>
+  </div>
+  <!-- </div> -->
+
+<% }else{ %>
+        <% for (let index=post.length-1; index > -1; index--) { %>
+        <div class="card mx-2 my-2">
+            <div class="card-body">
+                <h3 class="card-title"><%= post[index] %> </h3>
+                  <p class="card-text text-truncate" > Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati nam error vero, nesciunt qui repudiandae cumque accusantium recusandae pariatur expedita enim nobis! Officia, minus aliquam, quidem quae delectus enim quasi cumque animi quaerat at sequi pariatur, officiis sint mollitia libero? Ab, officiis tempora ut itaque neque quis quasi ducimus modi quos vitae ratione accusamus quibusdam, sunt quam libero facilis, doloremque natus! Vel, eveniet, quae veniam numquam aperiam nostrum modi amet nihil maxime, porro repellat corporis dolorem consectetur? Suscipit nesciunt, tempore iste temporibus nobis consequatur saepe omnis cupiditate vero repellendus odit quas at nam officiis aperiam quod consequuntur, hic alias ea ipsum. Culpa modi vero ducimus atque nobis perferendis nesciunt temporibus saepe alias? Aliquid quos reprehenderit maiores minus eum omnis atque voluptatibus perspiciatis ea, possimus culpa natus recusandae et cumque accusantium delectus labore eveniet tempora? Molestias autem, culpa ratione velit quia deserunt accusamus impedit aspernatur error. Deleniti pariatur esse odio nesciunt, labore, totam dicta earum fuga illo, laudantium autem nobis culpa perferendis eveniet ipsa sapiente. Similique repellendus quo dolorem quas distinctio eius labore, nobis eos impedit saepe vero harum veniam sapiente deleniti libero nostrum quidem aliquam velit tempora, laboriosam minus quam odit! Aspernatur ab magnam voluptates non sint ex commodi distinctio.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure asperiores ratione ad sed. Cum enim ipsum natus recusandae expedita accusantium, quia quasi! Ipsa, esse impedit placeat nam delectus harum reprehenderit?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum doloremque saepe numquam cum error, quo vero consequuntur aspernatur ad pariatur nulla tenetur hic cupiditate rem commodi quia consectetur reiciendis dolore.With supporting text below as a natural lead-in to additional content.</p>
+                  <div class="text-end">
+                    <form action="/modify" method="post" style="display: inline;"><button type="submit" name="modify" value="<%=index%>" class="btn btn-primary">Edit</button></a></form>
+                    <form action="/delete" method="post" style="display:inline;"><button type="submit" name="delete"  value="<%=index%>" class="btn btn-danger">Delete</button></form>
+        </div>
+        </div></div>
+        <% }} %>
+</div><script>
+	window.onpageshow = function(event) {
+		if (event.persisted) {
+			window.location.reload();
+		}
+	};
+</script>

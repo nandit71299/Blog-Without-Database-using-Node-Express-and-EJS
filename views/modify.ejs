@@ -1,0 +1,18 @@
+<%- include("header.ejs") %>
+
+<div class="container mt-5">
+Previous Title : <%= title %>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-3">
+        <form action="/submitmodification" method="post">
+            <label for="title"> Enter New Title </label>
+            <input type="hidden" value="<%=index%>" name = "previoustitle"></label>
+            <input class="form-control mt-2" type="text" name="title" id="" placeholder="Post title" required>
+        <button type="submit" class="btn mt-2 btn-primary">Modify</button> 
+        </form>
+    </div>    
+    </div>
+    </div>
+    
